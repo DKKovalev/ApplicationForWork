@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -121,18 +120,5 @@ public class MainActivity extends AppCompatActivity {
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
         return restAdapter;
-    }
-
-
-    private class DataWrapper implements Serializable {
-        private ArrayList<Point> points;
-
-        public DataWrapper(ArrayList<Point> points) {
-            this.points = points;
-        }
-
-        public ArrayList<Point> getPoints() {
-            return this.points;
-        }
     }
 }
