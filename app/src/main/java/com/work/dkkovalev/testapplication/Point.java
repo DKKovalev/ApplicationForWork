@@ -4,12 +4,15 @@ package com.work.dkkovalev.testapplication;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Point {
+import java.io.Serializable;
+
+public class Point implements Serializable {
 
     private String title;
     private String description;
     private double lat;
     private double lng;
+    private String id;
 
     public Point(String title, double lat, double lng) {
         this.title = title;
@@ -23,10 +26,6 @@ public class Point {
         this.lat = lat;
         this.lng = lng;
     }
-
-    /*public Point(Parcel source) {
-        this.title = source.readString();
-    }*/
 
     public String getTitle() {
         return title;
@@ -60,28 +59,11 @@ public class Point {
         this.lng = lng;
     }
 
-    /*@Override
-    public int describeContents() {
-        return this.hashCode();
+    public String getId() {
+        return id;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(description);
-        dest.writeDouble(lat);
-        dest.writeDouble(lng);
+    public void setId(String id) {
+        this.id = id;
     }
-
-    public static final Parcelable.Creator CREATOR = new Creator() {
-        @Override
-        public Point createFromParcel(Parcel source) {
-            return new Point(source);
-        }
-
-        @Override
-        public Object[] newArray(int size) {
-            return new Object[0];
-        }
-    };*/
 }

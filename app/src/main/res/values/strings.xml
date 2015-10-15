@@ -1,13 +1,23 @@
 <resources>
     <string name="app_name">TestApplication</string>
-    <string name="endpoint">http://192.168.88.247:3000/</string>
-    <string name="alert_dialog_title">Error</string>
-    <string name="alert_dialog_description_download">Cannot download data</string>
-    <string name="alert_dialog_description_upload">Cannot upload data</string>
-    <string name="alert_dialog_button_dismiss">Dismiss</string>
+    <string name="endpoint">http://192.168.1.64:3000/</string>
+    <string name="alert_dialog_title">What do you want to do?</string>
+    <string name="alert_dialog_description">Select what do you want to do with this element</string>
+    <string name="alert_dialog_button_update">Update</string>
+    <string name="alert_dialog_button_delete">Delete</string>
+    <string name="alert_dialog_description_download">Error while downloading</string>
     <string name="title_activity_maps">Map</string>
     <string name="button_map">Map</string>
     <string name="button_delete">Delete</string>
     <string name="button_update">Update</string>
     <string name="button_post">Post</string>
+    <string name="edit_text_add_new_point_title_hint">Title goes here</string>
+    <string name="edit_text_add_new_point_description_hint">Description goes here</string>
+    <string name="button_submit_adding">Add</string>
+    <string name="toast_success">Success</string>
+    <string name="toast_error">Failure</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_show_one_item">Show one point</string>
+    <string name="action_add_new_item">Add new point</string>
 </resources>
