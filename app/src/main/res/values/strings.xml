@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="endpoint">http://192.168.88.247:3000/</string>
+    <string name="alert_dialog_title">Error</string>
+    <string name="alert_dialog_description_download">Cannot download data</string>
+    <string name="alert_dialog_description_upload">Cannot upload data</string>
+    <string name="alert_dialog_button_dismiss">Dismiss</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="button_map">Map</string>
+    <string name="button_delete">Delete</string>
+    <string name="button_update">Update</string>
+    <string name="button_post">Post</string>
+</resources>
