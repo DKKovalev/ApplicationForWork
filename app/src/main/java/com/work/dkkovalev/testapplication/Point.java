@@ -14,6 +14,11 @@ public class Point implements Serializable {
     private double lng;
     private String id;
 
+    private double distance;
+
+    public Point() {
+    }
+
     public Point(String title, double lat, double lng) {
         this.title = title;
         this.lat = lat;
@@ -25,6 +30,14 @@ public class Point implements Serializable {
         this.description = description;
         this.lat = lat;
         this.lng = lng;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     public String getTitle() {

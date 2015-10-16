@@ -23,6 +23,8 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import retrofit.Callback;
@@ -49,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
     private RecyclerAdapter recyclerAdapter;
 
     private AlertDialog.Builder alertDialog;
-    private ApiMethods apiMethods;
+
+    private MathHandler mathHandler;
 
     private int pos;
 
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
                 startActivity(intent);
             }
         });
+
+        mathHandler = new MathHandler();
 
         pointsArrayList = new ArrayList<>();
 
@@ -199,6 +204,21 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
             public void success(List<Point> points, Response response) {
 
                 pointsArrayList.addAll(points);
+
+                for (Point point : points) {
+                    point.setDistance(mathHandler.getDistance(lat, lng, point.getLat(), point.getLng()));
+                }
+
+                Collections.sort(points, new Comparator<Point>() {
+                    @Override
+                    public int compare(Point lhs, Point rhs) {
+                        if (lhs.getDistance() == rhs.getDistance()) {
+                            return 0;
+                        } else {
+                            return lhs.getDistance() > rhs.getDistance() ? 1 : -1;
+                        }
+                    }
+                });
 
                 recyclerAdapter = new RecyclerAdapter(points, getApplication());
                 recyclerAdapter.setClickListener(MainActivity.this);
